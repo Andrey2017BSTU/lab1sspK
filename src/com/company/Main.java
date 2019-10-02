@@ -52,24 +52,24 @@ public class Main {
     }
  public static  String xor(String str1, String str2){
 int a = 0;
-     if (str1.length() > str2.length()) {
+     if (str1.length() >= str2.length()) {
          a=str1.length();
      }
-     if (str1.length() < str2.length()) {
+     if (str1.length() <= str2.length()) {
          a=str2.length();
      }
 
-        char s1[] = str1.toCharArray();
-        char s2[] = new char[a];
+        //char s1[] = str1.toCharArray();
+     int s1[] = new int[a];
+     int s2[] = new int[a];
      for (int i = 0; i < str2.length(); i++) {
-
          s2[i] = str2.charAt(i);
-
-
-
+     }
+     for (int i = 0; i < str1.length(); i++) {
+         s1[i] = str1.charAt(i);
      }
         int res[] = new int[a] ;
-        for (int i = 0; i < str1.length(); i++) {
+        for (int i = 0; i < a; i++) {
          res[i]= s1[i]^s2[i] ;
         }
         //String resylt;
@@ -105,6 +105,6 @@ int a = 0;
         for (int i = 0; i < a.length; i++) {
             System.out.print(+a[i]+" ");
         }*/
-        System.out.println(xor("abcrg","def"));
+        System.out.println(xor("abc","abcrc"));
     }
 }
