@@ -40,8 +40,18 @@ public class Main {
 
         }
         }
+    public static void moveLeft(int[] array, int positions) {
+        int size = array.length;
+        for (int i = size; i > positions; i--) {
+            int temp = array[size-1];
+            for (int j = size-1; j > 0; j--) {
+                array[j] = array[j-1];
+            }
+            array[0] = temp;
+        }
+    }
     public static void main(String[] args) {
-        int amount ;
+        /*int amount ;
         int [] massive ;
         System.out.println("Введите количество чисел");
         Scanner sc = new Scanner(System.in);
@@ -52,7 +62,12 @@ public class Main {
             massive[i] = sc.nextInt();
         }
 
-        countNum(massive,amount);
+        countNum(massive,amount);*/
+        int a[]= {0,1,2,3};
+        moveLeft(a,4);
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(+a[i]+" ");
+        }
 
     }
 }
