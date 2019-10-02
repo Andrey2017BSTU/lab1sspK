@@ -50,6 +50,43 @@ public class Main {
             array[0] = temp;
         }
     }
+ public static  String xor(String str1, String str2){
+int a = 0;
+     if (str1.length() > str2.length()) {
+         a=str1.length();
+     }
+     if (str1.length() < str2.length()) {
+         a=str2.length();
+     }
+
+        char s1[] = str1.toCharArray();
+        char s2[] = new char[a];
+     for (int i = 0; i < str2.length(); i++) {
+
+         s2[i] = str2.charAt(i);
+
+
+
+     }
+        int res[] = new int[a] ;
+        for (int i = 0; i < str1.length(); i++) {
+         res[i]= s1[i]^s2[i] ;
+        }
+        //String resylt;
+       // resylt = new String();
+        char resylt[] = new char[a];
+     for (int i = 0; i < res.length; i++) {
+        if (res[i]>32){
+         resylt[i] = (char)res [i];
+
+     }else resylt[i]= ' ';
+     }
+
+
+     return Arrays.toString(resylt);
+    }
+
+
     public static void main(String[] args) {
         /*int amount ;
         int [] massive ;
@@ -63,11 +100,11 @@ public class Main {
         }
 
         countNum(massive,amount);*/
-        int a[]= {0,1,2,3};
+       /* int a[]= {0,1,2,3};
         moveLeft(a,4);
         for (int i = 0; i < a.length; i++) {
             System.out.print(+a[i]+" ");
-        }
-
+        }*/
+        System.out.println(xor("abcrg","def"));
     }
 }
